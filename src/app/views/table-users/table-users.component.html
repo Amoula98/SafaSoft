@@ -1,0 +1,70 @@
+<div class="container table-container">
+<div class="row d-flex justify-content-between">
+
+    <div class="p-2 ml-2"><span class="d-flex justify-content-start"> <b class="mr-2">{{numOfUsers}}</b>   Users</span></div>
+    <div class="p-2"><button class="d-flex justify-content-end btn btn-default  text-white"> Create New User</button></div>
+
+
+</div>
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th>Exported Name</th>
+      <th>Email</th>
+      <th >Country</th>
+      <th>Joined Dates</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let user of users" >
+      <tr class="card-shadow">
+        <td>
+          <span>
+            <img src="{{user.exportedImg}}"> </span>
+            <span>{{user.name}}</span>
+            </td>
+            <td >
+              <span>{{user.email}}</span>
+          </td>
+          <td >
+          <span>{{user.Country}}</span>
+          </td>
+          <td >
+          <span>{{user.JoinedDates | date: 'MMM d, y  h:mm a'  }}</span>
+          </td>
+          <td >
+              <a class="btn btn-default"  href="#">
+            <i class="fas fa-eye "></i>  <span class="tooltiptext">view</span>
+          </a>
+            <a class="btn btn-default" href="#">
+              <i class="fas fa-trash-alt "></i> <span class="tooltiptext">delete</span>
+            </a>
+            <a class="btn btn-default"  href="#">
+
+            <i class="fas fa-pencil-alt "></i><span class="tooltiptext">edit</span>
+          </a>
+        </td>
+
+        </tr>
+  </ng-container>
+
+  </tbody>
+</table>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled mr-2">
+      <a class="page-link rounded" href="#" tabindex="-1"><<</a>
+    </li>
+    <li class="page-item mr-2"><a class="page-link rounded" href="#"><</a></li>
+    <li class="page-item mr-2"><span> page 1/{{users.length}} </span></li>
+    <li class="page-item mr-2"><a class="page-link" href="#">></a></li>
+    <li class="page-item mr-2">
+      <a class="page-link rounded" href="#">>></a>
+    </li>
+  </ul>
+</nav>
+
+</div>

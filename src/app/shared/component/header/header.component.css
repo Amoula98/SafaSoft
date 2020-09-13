@@ -1,0 +1,9 @@
+ul.navbar-nav {
+  font-size: 1.2em;
+}
+.navbar-light .navbar-nav .nav-item.active {
+  text-decoration: underline;
+}
+.nav-item.active a.nav-link  {
+  color: #0071BA ;
+}

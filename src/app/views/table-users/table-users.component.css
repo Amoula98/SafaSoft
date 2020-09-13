@@ -1,0 +1,57 @@
+/* tbody tr {
+  -webkit-box-shadow: -2px 4px 10px 0px #2D588A;
+-moz-box-shadow: -2px 4px 10px 0px #2D588A;
+box-shadow: -2px 4px 10px 0px #2D588A;
+} */
+button {
+  background-color: #1C97E9;
+  border-radius: 2em;
+  padding: 10px 45px;
+}
+.card-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+table thead  tr {
+  margin: 30px;
+}
+a {
+  color:  #788DA5;
+  font-size: x-large;
+  position: relative;
+  display: inline-block;
+}
+
+a.btn:hover  {
+  background-color: #cec3c02b;
+  border-radius: 1em;
+}
+
+a:hover .tooltiptext {
+  visibility: visible;
+
+}
+a .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
