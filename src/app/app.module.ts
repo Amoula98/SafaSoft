@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DashBoardComponent,  TableUsersComponent } from './views';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService } from './_services';
-import { AuthGuard } from './_services/auth/auth-guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -33,7 +31,7 @@ import { FooterComponent, HeaderComponent } from './shared/component';
     ToastrModule.forRoot() // ToastrModule added
   ],
   exports: [],
-  providers: [AuthGuard, AuthenticationService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
