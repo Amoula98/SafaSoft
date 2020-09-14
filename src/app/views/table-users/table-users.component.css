@@ -3,24 +3,41 @@
 -moz-box-shadow: -2px 4px 10px 0px #2D588A;
 box-shadow: -2px 4px 10px 0px #2D588A;
 } */
-button {
-  background-color: #1C97E9;
-  border-radius: 2em;
-  padding: 10px 45px;
+.table-wrapper {
+  margin-top: 115px;
 }
-.card-shadow {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+table.mat-table {
+  border-collapse: inherit;
+    border-spacing: 0px 15px;
+    width: 100%;
+  }
+  button {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1c97e9+0,097dca+0,2989d8+0,0071bc+100 */
+    background: #1c97e9; /* Old browsers */
+    background: -moz-linear-gradient(left,  #1c97e9 0%, #097dca 0%, #1c97e9 0%, #0071bc 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #1c97e9 0%,#097dca 0%,#1c97e9 0%,#0071bc 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #1c97e9 0%,#097dca 0%,#1c97e9 0%,#0071bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c97e9', endColorstr='#0071bc',GradientType=1 ); /* IE6-9 */
+
+border-radius: 2em;
+padding: 10px 45px;
+}
+table thead  tr {
+  margin: 30px;
+}
+tr.mat-row {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
   width: 40%;
   border-radius: 5px;
 }
 
-.card-shadow:hover {
+tr.mat-row:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-table thead  tr {
-  margin: 30px;
+td.mat-cell{
+  padding: 12px;
+  border: none;
 }
 a {
   color:  #788DA5;
@@ -40,8 +57,8 @@ a:hover .tooltiptext {
 }
 a .tooltiptext {
   visibility: hidden;
-  width: 120px;
-  background-color: black;
+  width: 80px;
+  background-color: #788DA5;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -51,7 +68,8 @@ a .tooltiptext {
   position: absolute;
   z-index: 1;
   top: 100%;
-  left: 50%;
-  margin-left: -60px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
 }
 

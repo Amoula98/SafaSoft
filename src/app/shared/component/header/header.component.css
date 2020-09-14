@@ -1,9 +1,29 @@
-ul.navbar-nav {
-  font-size: 1.2em;
+nav {
+  margin-top: 51px;
 }
-.navbar-light .navbar-nav .nav-item.active {
+ul.navbar-nav a.nav-link {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+}
+/* .navbar-light .navbar-nav .nav-item.active {
   text-decoration: underline;
-}
+} */
 .nav-item.active a.nav-link  {
   color: #0071BA ;
+}
+.nav-item {
+  position: relative;
+}
+.nav-item.active::after   {
+  content: '';
+  height: 1px;
+  width: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0071BA ;
 }

@@ -1,12 +1,13 @@
-<div class="container table-container">
+<div class="table-wrapper">
+<div class="container">
 <div class="row d-flex justify-content-between">
 
-    <div class="p-2 ml-2"><span class="d-flex justify-content-start"> <b class="mr-2">{{numOfUsers}}</b>   Users</span></div>
-    <div class="p-2"><button class="d-flex justify-content-end btn btn-default  text-white"> Create New User</button></div>
+    <div class="p-2 ml-2"><span > <b class="mr-2">{{numOfUsers}}</b>   Users</span></div>
+    <div class="p-2"><button class="btn btn-default  text-white" (click)="addNewUser()" > Create New User</button></div>
 
 
 </div>
-<table class="table table-borderless">
+<!-- <table class="table table-borderless">
   <thead>
     <tr>
       <th>Exported Name</th>
@@ -38,7 +39,7 @@
             <i class="fas fa-eye "></i>  <span class="tooltiptext">view</span>
           </a>
             <a class="btn btn-default" href="#">
-              <i class="fas fa-trash-alt "></i> <span class="tooltiptext">delete</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20.001" viewBox="0 0 16 20.001"><path d="M442.031,477.64a1.857,1.857,0,0,1-1.844-1.786l-.532-11.339h-.337a.62.62,0,0,1-.615-.625h0V461.7a1.553,1.553,0,0,1,1.539-1.562h3.384v-.625a1.863,1.863,0,0,1,1.846-1.875h2.461a1.863,1.863,0,0,1,1.846,1.875v.625h3.385A1.551,1.551,0,0,1,454.7,461.7v2.188a.62.62,0,0,1-.615.625h-.336l-.532,11.339a1.857,1.857,0,0,1-1.844,1.786Zm-.614-1.845a.619.619,0,0,0,.614.6h9.344a.619.619,0,0,0,.614-.6l.53-11.28H440.888ZM439.935,461.7v1.563h13.537V461.7a.31.31,0,0,0-.307-.312H440.242a.31.31,0,0,0-.307.31Zm4.923-2.187v.625h3.691v-.625a.62.62,0,0,0-.615-.625h-2.461a.621.621,0,0,0-.614.624Zm4.307,15v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Zm-3.077,0v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Zm-3.077,0v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Z" transform="translate(-438.703 -457.641)" fill="#788da5"/></svg> <span class="tooltiptext">delete</span>
             </a>
             <a class="btn btn-default"  href="#">
 
@@ -65,6 +66,61 @@
       <a class="page-link rounded" href="#">>></a>
     </li>
   </ul>
-</nav>
+</nav> -->
 
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="ExportedName">
+      <th mat-header-cell *matHeaderCellDef> Exported Name </th>
+      <td mat-cell *matCellDef="let element"> <span>
+        <img src="{{element.exportedImg}}"> </span>
+        <span>{{element.name}}</span></td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let element"> {{element.Country}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="JoinedDates">
+      <th mat-header-cell *matHeaderCellDef> Joined Dates </th>
+      <td mat-cell *matCellDef="let element"> {{element.JoinedDates | date: 'MMM d, y  h:mm a'  }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+      <a class="btn btn-default"  href="#">
+        <i class="fas fa-eye "></i>  <span class="tooltiptext">view</span>
+      </a>
+        <a class="btn btn-default" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20.001" viewBox="0 0 16 20.001"><path d="M442.031,477.64a1.857,1.857,0,0,1-1.844-1.786l-.532-11.339h-.337a.62.62,0,0,1-.615-.625h0V461.7a1.553,1.553,0,0,1,1.539-1.562h3.384v-.625a1.863,1.863,0,0,1,1.846-1.875h2.461a1.863,1.863,0,0,1,1.846,1.875v.625h3.385A1.551,1.551,0,0,1,454.7,461.7v2.188a.62.62,0,0,1-.615.625h-.336l-.532,11.339a1.857,1.857,0,0,1-1.844,1.786Zm-.614-1.845a.619.619,0,0,0,.614.6h9.344a.619.619,0,0,0,.614-.6l.53-11.28H440.888ZM439.935,461.7v1.563h13.537V461.7a.31.31,0,0,0-.307-.312H440.242a.31.31,0,0,0-.307.31Zm4.923-2.187v.625h3.691v-.625a.62.62,0,0,0-.615-.625h-2.461a.621.621,0,0,0-.614.624Zm4.307,15v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Zm-3.077,0v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Zm-3.077,0v-8.125a.615.615,0,1,1,1.231,0v8.125a.615.615,0,1,1-1.231,0Z" transform="translate(-438.703 -457.641)" fill="#788da5"/></svg> <span class="tooltiptext">delete</span>
+        </a>
+        <a class="btn btn-default"  href="#">
+
+        <i class="fas fa-pencil-alt "></i><span class="tooltiptext">edit</span>
+      </a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
+</div>
+</div>
+<ng-template #addNewUserTemplate>
+
+</ng-template>
