@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@media (max-width: 575.9px) {
+  mat-dialog-container {
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+}
 
+.mat-dialog-container {
+  max-height: 90vh !important;
+}
