@@ -5,28 +5,27 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashBoardComponent,  NewUserDialogComponent,  TableUsersComponent } from './views';
+import { DashBoardComponent, StepperFirstComponent, StepperSecondComponent } from './views';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ToastrModule } from 'ngx-toastr';
-import { FooterComponent, HeaderComponent } from './shared/component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatStepperModule} from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { UploadImgComponent } from './views/dash-board/upload-img/upload-img.component';
+import { SubmitDataComponent } from './views/dash-board/submit-data/submit-data.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashBoardComponent,
-    FooterComponent,
-    HeaderComponent,
-    TableUsersComponent,
-    NewUserDialogComponent
+    StepperFirstComponent,
+    StepperSecondComponent,
+    UploadImgComponent,
+    SubmitDataComponent
   ],
   imports: [
     CommonModule,
@@ -35,19 +34,16 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
-    MatDialogModule,
     MatFormFieldModule,
-    MatTableModule,
-    MatPaginatorModule,
-    FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    MatIconModule
   ],
   exports: [],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NewUserDialogComponent]
+  entryComponents: []
 })
 export class AppModule { }

@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #FAFAFA;
+}
+.mat-form-field {
+  display: block !important;
+}
+
+.mat-form-field-flex {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+.mat-form-field-invalid {
+  border: 1px solid red;
+}
 @media (max-width: 575.9px) {
   mat-dialog-container {
     padding: 0 !important;
@@ -8,4 +24,22 @@
 
 .mat-dialog-container {
   max-height: 90vh !important;
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
+
+
+.mat-horizontal-stepper-header .mat-step-icon {
+  display: none ;
+}
+
+.mat-horizontal-stepper-header-container {
+    background-color: chartreuse;
+}
+
+.fa, .fas, .far {
+  font-weight: 900;
+  font-size: xx-large;
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableUsersComponent } from './table-users.component';
+import { StepperFirstComponent } from './stepper-first.component';
 
-describe('TableUsersComponent', () => {
-  let component: TableUsersComponent;
-  let fixture: ComponentFixture<TableUsersComponent>;
+describe('StepperFirstComponent', () => {
+  let component: StepperFirstComponent;
+  let fixture: ComponentFixture<StepperFirstComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableUsersComponent ]
+      declarations: [ StepperFirstComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableUsersComponent);
+    fixture = TestBed.createComponent(StepperFirstComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

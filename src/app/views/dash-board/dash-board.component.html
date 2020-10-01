@@ -1,10 +1,40 @@
-<div class="container">
+<div class="container mt-5">
 
-  <!-- header -->
-       <app-header></app-header>
-
-    <!-- body -->
-  </div>
-  <app-table-users></app-table-users>
-    <!-- footer -->
-     <app-footer></app-footer>
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="formFirstStep" state="phone">
+      <ng-template matStepLabel><i class="fas fa-user-secret"></i></ng-template>
+      <form [formGroup]="formFirstStep">
+        <p class="text-center  mt-5">Tell me more about you.</p>
+       <app-stepper-first [_formData]="formFirstStep"></app-stepper-first>
+        <div>
+          <button mat-button matStepperNext (click)="get()">Next</button>
+        </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="formSecoundStep" >
+      <ng-template matStepLabel><i class="far fa-building"></i></ng-template>
+      <p class="text-center mt-5">Verify your company.</p>
+      <form [formGroup]="formSecoundStep">
+        <app-stepper-second [_formData]="formSecoundStep"></app-stepper-second>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="formThirdStep" >
+      <ng-template matStepLabel><i class="fas fa-images"></i></ng-template>
+      <p class="text-center mt-5">Upload company logo.</p>
+      <app-upload-img [_formData]="formThirdStep"></app-upload-img>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel><i class="fas fa-check"></i></ng-template>
+      <p class="text-center mt-5">You're all set.</p>
+      <app-submit-data></app-submit-data>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="submit()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
