@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { UploadImgComponent } from './views/dash-board/upload-img/upload-img.component';
 import { SubmitDataComponent } from './views/dash-board/submit-data/submit-data.component';
+import { ErrorMsgComponent } from './_shared/errorMsg/error-msg/error-msg.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SubmitDataComponent } from './views/dash-board/submit-data/submit-data.
     StepperFirstComponent,
     StepperSecondComponent,
     UploadImgComponent,
-    SubmitDataComponent
+    SubmitDataComponent,
+    ErrorMsgComponent
   ],
   imports: [
     CommonModule,

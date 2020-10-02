@@ -1,0 +1,23 @@
+<ng-container *ngIf="control && control?.invalid && control?.touched">
+  <ul>
+    <li *ngIf="control.hasError('required')" class="text-danger">
+      this is required field
+    </li>
+    <li *ngIf="control.hasError('pattern')" class="text-danger" >
+      pattern is invalid
+    </li>
+    <li *ngIf="control.hasError('maxlength')" class="text-danger">
+      the length is over the max limit
+    </li>
+    <li *ngIf="control.hasError('minlength')" class="text-danger">
+      the length is under the min limit
+    </li>
+    <li *ngIf="control.hasError('email')" class="text-danger">
+      the email should be like eample@ss.com
+    </li>
+     <!-- <li *ngFor="let err of control.errors | keyvalue">
+       {{err.key}}
+     </li> -->
+  </ul>
+
+</ng-container>
