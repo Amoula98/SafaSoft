@@ -82,6 +82,7 @@ button.btn{
     padding: 0 10px !important;
 
     &.mat-step-header {
+      pointer-events: none;
       padding: 15px 60px;
       text-align: left;
     }
