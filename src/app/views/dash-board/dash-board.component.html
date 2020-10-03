@@ -30,7 +30,7 @@
     <mat-step>
       <ng-template matStepLabel><i class="fas fa-check"></i></ng-template>
       <p class="text-center mt-5">You're all set.</p>
-      <app-submit-data [_formData]="formFirstStep?.user_email" ></app-submit-data>
+      <app-submit-data [_formData]="formFirstStep" ></app-submit-data>
       <div class="d-flex justify-content-between">
         <button class="btn btn-default" mat-button matStepperPrevious>Back</button>
         <button  class="btn btn-primary"  mat-button  (click)="submit()">Submit</button>

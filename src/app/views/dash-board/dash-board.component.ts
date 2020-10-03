@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterationService } from '../../_services';
 
@@ -42,7 +42,7 @@ export class DashBoardComponent implements OnInit {
       company_country_id: ['', Validators.required],
       company_city_id: ['', Validators.required],
       company_phone: ['', Validators.required],
-      company_extra_data: this._formBuilder.array([''], Validators.required),
+      company_extra_data: new FormArray([new FormControl('')], Validators.required),
     });
     this.formThirdStep = this._formBuilder.group({
       company_avatar: ['@/home/abdo/Pictures/Screenshot from 2020-08-16 14-22-54.png', Validators.required]

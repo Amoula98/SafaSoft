@@ -55,8 +55,7 @@
 
   </div>
   <ng-container formArrayName="company_extra_data">
-  <div class="col-6"   >
-    <ng-container *ngFor="let creds of _formData?.controls?.company_extra_data?.value; let i = index">
+  <div class="col-6"   *ngFor="let data of _formData.get('company_extra_data').controls ; let i = index" >
     <mat-form-field class="example-full-width" floatLabel="always">
       <mat-label>Company Phone Number</mat-label>
       <span matPrefix>+02 &nbsp;</span>
@@ -64,8 +63,23 @@
     </mat-form-field>
     <app-error-msg [formControlName]="i"></app-error-msg>
 
-</ng-container>
 </div>
 </ng-container>
 </div>
 </form>
+
+
+<!-- <form [formGroup]="_formData">
+
+  <div formArrayName="company_extra_data">
+  <div class="form-group" *ngFor="let f of _formData.get('company_extra_data').controls;let i=index">
+    <label for="filename">Input</label>
+    <input type="text"
+     class="form-control"
+     [formControlName]="i"
+    placeholder="Input">
+
+  </div>
+</div>
+
+</form> -->

@@ -146,6 +146,7 @@ button.btn{
 .last-edited-step-3 {
   @include styleStepLine(2);
   @include styleStepLine(4);
+  @include styleStepLine(6);
   @include styleEditedStepIcon(1);
   @include styleEditedStepIcon(3);
 }

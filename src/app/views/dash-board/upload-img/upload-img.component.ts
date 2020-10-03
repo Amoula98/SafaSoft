@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UploadImgComponent implements OnInit {
   @Input() _formData;
-  isShow: boolean;
+  isShow = true;
   src = '../../../../assets/images/uploadImg/1.PNG';
   constructor() { }
 
