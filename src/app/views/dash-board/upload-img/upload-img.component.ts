@@ -21,8 +21,8 @@ export class UploadImgComponent implements OnInit {
       const reader = new FileReader();
       const self = this;
        reader.onload = function (e) {
-         const src: any = e.target.result;
-        self.src = src;
+         const src: any = e.target;
+        self.src = src.result;
         };
         reader.readAsDataURL(files[0]);
       this._formData.patchValue({
