@@ -54,14 +54,18 @@
     <app-error-msg controlName="company_phone"></app-error-msg>
 
   </div>
-  <div class="col-6" >
+  <ng-container formArrayName="company_extra_data">
+  <div class="col-6"   >
+    <ng-container *ngFor="let creds of _formData?.controls?.company_extra_data?.value; let i = index">
     <mat-form-field class="example-full-width" floatLabel="always">
       <mat-label>Company Phone Number</mat-label>
       <span matPrefix>+02 &nbsp;</span>
-      <input autocomplete="off" type="tel" matInput placeholder="555-555-1234" formControlName="company_extra_data">
+      <input autocomplete="off" type="tel" matInput placeholder="555-555-1234" [formControlName]="i">
     </mat-form-field>
-    <app-error-msg controlName="company_extra_data"></app-error-msg>
+    <app-error-msg [formControlName]="i"></app-error-msg>
 
-  </div>
+</ng-container>
+</div>
+</ng-container>
 </div>
 </form>

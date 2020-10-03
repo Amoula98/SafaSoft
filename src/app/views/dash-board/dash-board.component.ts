@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterationService } from '../../_services';
 
 @Component({
@@ -14,9 +15,12 @@ export class DashBoardComponent implements OnInit {
   formThirdStep: any;
   @ViewChild('stepper') stepper;
 
-  constructor( private _formBuilder: FormBuilder, private registeration: RegisterationService) { }
+  constructor( private _formBuilder: FormBuilder, private registeration: RegisterationService, private route: Router) { }
 
   ngOnInit() {
+    this.createForm();
+  }
+  createForm() {
     this.formFirstStep = this._formBuilder.group({
       user_full_name: ['', [Validators.required, Validators.minLength(10)] ],
       user_email: ['', [Validators.required, Validators.email]],
@@ -38,11 +42,7 @@ export class DashBoardComponent implements OnInit {
       company_country_id: ['', Validators.required],
       company_city_id: ['', Validators.required],
       company_phone: ['', Validators.required],
-      company_extra_data: ['', Validators.required],
-      // user_position: ['', Validators.required],
-      // user_status: ['', Validators.required],
-      // user_is_admin: ['', Validators.required],
-      // lang: ['', Validators.required]
+      company_extra_data: this._formBuilder.array([''], Validators.required),
     });
     this.formThirdStep = this._formBuilder.group({
       company_avatar: ['@/home/abdo/Pictures/Screenshot from 2020-08-16 14-22-54.png', Validators.required]
@@ -50,16 +50,16 @@ export class DashBoardComponent implements OnInit {
   }
 
 get() {
-  console.log('v formData', this.formFirstStep);
   this.isMatchPassword();
 }
 submit() {
   console.log('v formData', this.formFirstStep, this.formSecoundStep, this.formThirdStep);
-  const data = {...this.formFirstStep.value, ...this.formSecoundStep.value, ...this.formThirdStep.value};
+  const data = {...this.formFirstStep.value, ...this.formSecoundStep.value};
   console.log('v formData', data);
   this.registeration.registeration(data).subscribe(
     (res) => {
       console.log('res', res);
+      this.route.navigate(['/succuss-operation']);
     }
   );
 
@@ -78,5 +78,9 @@ isMatchPassword() {
   }
   console.log('event', this.formFirstStep, this.formFirstStep.value.user_password, this.formFirstStep.value.user_password_confirmation);
 
+}
+updateForm() {
+  this.formFirstStep = this.formFirstStep;
+  console.log('v formData', this.formFirstStep);
 }
 }

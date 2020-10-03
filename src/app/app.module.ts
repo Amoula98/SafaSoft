@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashBoardComponent, StepperFirstComponent, StepperSecondComponent } from './views';
+import { CompletedFormStatusComponent, DashBoardComponent, StepperFirstComponent, StepperSecondComponent } from './views';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,7 +27,8 @@ import { ErrorMsgComponent } from './_shared/errorMsg/error-msg/error-msg.compon
     StepperSecondComponent,
     UploadImgComponent,
     SubmitDataComponent,
-    ErrorMsgComponent
+    ErrorMsgComponent,
+    CompletedFormStatusComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #FAFAFA;
+}
+.mat-form-field {
+  display: block !important;
+  &-flex {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.mat-form-field.ng-invalid.mat-form-field-invalid
+.mat-form-field-flex {
+  border: 1px solid red;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none;
+}
+
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
+
+
+ .fa, .fas, .far {
+  font-weight: 900;
+  top: 13px;
+  right: 1rem;
+  font-size: x-large;
+}
+
+
+button.btn{
+  padding: 0.5rem 5rem !important;
+
+  &-default {
+    background-color: #dee1e3;
+  }
+}
+
+
+
+
+.curser {
+  cursor: pointer;;
+}
+
+
+
+// Mat Stepper
+
+
+
+
+  .mat-horizontal-stepper-header-container {
+    background-color: #FAFAFA;
+    padding-bottom: 40px;
+    .mat-stepper-horizontal-line {
+      border-top-width: 9px !important;
+      // border-top-style : none
+    }
+  }
+
+  .mat-step-header {
+
+    .mat-step-label.mat-step-label-selected {
+      border: 1px solid red;
+      .fa, .fas, .far {
+        color: red;
+      }
+    }
+    .mat-step-header-ripple {
+      display: none !important;
+    }
+  }
+
+  .mat-horizontal-stepper-header {
+    padding: 0 10px !important;
+
+    &.mat-step-header {
+      padding: 15px 60px;
+      text-align: left;
+    }
+    .mat-step-icon {
+      display: none !important;
+     }
+  }
+  .mat-horizontal-stepper-header {
+    &:not(:last-child)::after,
+    &:not(:first-child)::before {
+      // display: none !important;
+      background-color: brown;
+    }
+    .mat-step-label {
+      background-color: white !important;
+      border-radius: 40px;
+      padding: 20px;
+    }
+  }
+
+
+  @mixin styleStepLine($index) {
+    .mat-horizontal-stepper-header {
+        &+.mat-stepper-horizontal-line:nth-child(#{$index}) {
+            height : 10px;
+            background-image: linear-gradient(to right, #00b495, #00aeea);
+        }
+    }
+}
+
+@mixin styleEditedStepIcon($index) {
+    .mat-horizontal-stepper-header:nth-child(#{$index}) {
+        .mat-step-label:not(.mat-step-icon-selected) {
+          border: 1px solid blue;
+            .fa, .fas, .far {
+              color: blue;
+            }
+        }
+    }
+}
+
+@mixin styleUnEditedStepIcon($index) {
+    .mat-horizontal-stepper-header:nth-child(#{$index}) {
+        .mat-step-label:not(.mat-step-icon-selected) {
+            background-color: #e8e8e8;
+        }
+    }
+}
+
+.last-edited-step-1 {
+    @include styleStepLine(2);
+    @include styleEditedStepIcon(1);
+    @include styleUnEditedStepIcon(3);
+}
+
+.last-edited-step-2 {
+    @include styleStepLine(2);
+    @include styleStepLine(4);
+    @include styleEditedStepIcon(1);
+    @include styleEditedStepIcon(3);
+}
+.last-edited-step-3 {
+  @include styleStepLine(2);
+  @include styleStepLine(4);
+  @include styleEditedStepIcon(1);
+  @include styleEditedStepIcon(3);
+}

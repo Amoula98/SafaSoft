@@ -1,15 +1,17 @@
 <div class="container">
   <form [formGroup]="_formData">
 <div class="avatar-upload">
-  <div class="avatar-puls">
-      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"  (change)="upload($event.target.files)" formControlName="company_avatar"/>
+  <div class="avatar-edit">
+      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"  (change)="upload($event.target.files)" />
       <label for="imageUpload"></label>
   </div>
   <div class="avatar-preview">
-      <div id="imagePreview" style="background-image: url('{{this.src}}');">
-      </div>
+      <img id="imagePreview" src="{{this.src}}">
   </div>
 </div>
 <p class="text-center" *ngIf="isShow">only images with size lower 500 KB are allowed</p>
 </form>
 </div>
+
+
+

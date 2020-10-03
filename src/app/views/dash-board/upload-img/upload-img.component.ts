@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-upload-img',
   templateUrl: './upload-img.component.html',
-  styleUrls: ['./upload-img.component.css']
+  styleUrls: ['./upload-img.component.scss']
 })
 export class UploadImgComponent implements OnInit {
   @Input() _formData;
@@ -18,6 +18,13 @@ export class UploadImgComponent implements OnInit {
     console.log('element, $event.target.files', files);
     if (Math.round(files[0].size / 1024) < 500) {
       // this.getBase64(files);
+      const reader = new FileReader();
+      const self = this;
+       reader.onload = function (e) {
+         const src: any = e.target.result;
+        self.src = src;
+        };
+        reader.readAsDataURL(files[0]);
       this._formData.patchValue({
         company_avatar: files[0].name
       });
